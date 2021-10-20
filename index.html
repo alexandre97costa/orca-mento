@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="whale.svg" />
+    <title>Orcas</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white">
+
+    <div class="container bg-white">
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 mt-4">
+                <p class="display-1 d-inline-block mr-2">Orcas</p>
+                <svg class="d-inline-block align-top m-3" height="100" version="1.1" id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                    <path style="fill:#9BFCFF;"
+                        d="M497,316c-9.6,23.099-24.699,44.399-43.001,62.699C439.6,393.1,423.401,404.799,406,413.8c-27.299,14.7-58.2,22.2-90,22.2c-5.4,0-11.1-0.3-16.5-0.601L271,293.2l135-26.1l58.001-11.1L497,316z" />
+                    <path style="fill:#3AAAFF;"
+                        d="M467,196H173.101c-26.7,0-48.9-19.801-52.5-45.3C138.9,136.599,150,114.399,150,91V31c0-8.401-6.599-15-15-15c-24.6,0-46.5,11.999-60,30.3C61.5,27.999,39.6,16,15,16C6.599,16,0,22.599,0,31v60c0,23.699,11.4,45.899,30,60v60c0,106.8,77.5,199.499,181,220.499V481c0,8.399,6.599,15,15,15c36.301,0,66.899-26.1,73.5-60.601c0.899-4.501,1.5-9.3,1.5-14.399v-7.8c29.399-18.9,54.6-55.499,59.099-97.2H497c7.8-18.001,15-46.5,15-75.601C512,215.799,491.6,196,467,196z" />
+                    <path style="fill:#76E2F8;"
+                        d="M497,316c-9.6,23.099-24.699,44.399-43.001,62.699C439.6,393.1,423.401,404.799,406,413.8V267.1l58.001-11.1L497,316z" />
+                    <path style="fill:#0095FF;"
+                        d="M512,240.399c0,29.101-7.2,57.599-15,75.601h-91V196h61C491.6,196,512,215.799,512,240.399z" />
+                    <circle style="fill:#444444;" cx="286" cy="271" r="15" />
+                    <path style="fill:#3AAAFF;"
+                        d="M481,61c0,8.399-6.599,15-15,15s-15-6.601-15-15c0-8.401-6.599-15-15-15s-15,6.599-15,15v90c0,8.399-6.599,15-15,15s-15-6.601-15-15V91c0-8.401-6.599-15-15-15s-15,6.599-15,15c0,8.399-6.599,15-15,15s-15-6.601-15-15c0-24.901,20.099-45,45-45c6,0,11.7,1.199,16.8,3.3c2.401-8.401,6.899-15.901,13.2-21.301C413.8,20.499,424.3,16,436,16C460.901,16,481,36.099,481,61z" />
+                    <path style="fill:#0095FF;"
+                        d="M406,166V27.999C413.8,20.499,424.3,16,436,16c24.901,0,45,20.099,45,45c0,8.399-6.599,15-15,15s-15-6.601-15-15c0-8.401-6.599-15-15-15s-15,6.599-15,15v90C421,159.399,414.401,166,406,166z" />
+                </svg>
+                <!--<img src="whale.svg" alt="orca" height="100" class="d-inline-block align-top m-3" />-->
+                <br>
+                <p class="h3 d-inline-block text-muted">Um site que faz orçamentos</p>
+            </div>
+            <div class="col-sm-12 col-lg-6 mt-5">
+                <div class="input-group ">
+                    <div class="custom-file ">
+                        <input type="file" class="custom-file-input" id="inputAluminio" aria-describedby="inputAluminio"
+                            accept=".txt"
+                            onchange="bota(); document.getElementById('input-label-alu').innerHTML = this.files[0].name;">
+                        <label id="input-label-alu" class="custom-file-label" for="inputAluminio">Escolher ficheiro
+                            (Alumínios)</label>
+                    </div>
+                </div>
+                <div class="input-group  mt-2">
+                    <div class="custom-file ">
+                        <input type="file" class="custom-file-input " id="inputVidro" aria-describedby="inputVidro"
+                            accept=".txt"
+                            onchange="bota(); document.getElementById('input-label-vid').innerHTML = this.files[0].name;">
+                        <label id="input-label-vid" class="custom-file-label" for="inputVidro">Escolher ficheiro
+                            (Vidros)</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-xl-5">
+                        <div class="input-group  mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Margem:</span>
+                            </div>
+                            <input id="margem" type="number" class="form-control" value="50" step="50"
+                                aria-label="Margem de lucro (em percentagem)">
+                            <div class="input-group-append">
+
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-7">
+                        <button id="bota-shake" class="btn btn-primary btn-block mt-3 " disabled onclick="input();">bota
+                            shake</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <hr class="mt-4">
+    </div>
+    <div class="container" id="nothing-here">
+        <div class="my-5">&nbsp;</div>
+        <p class="display-4 text-muted text-center mt-5">Hmm, nao há nada aqui (ainda)</p>
+        <p class="h4 text-muted text-center mt-3">Mete os ficheiros ali em cima para começar!</p>
+    </div>
+
+    <!-- Small modal -->
+    <div id="myModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+        aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content p-4">
+                <p>Pá, esse ficheiro não é o correto</p>
+                <p>Tem que ser .txt !</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="tabelaDiv" class="container-fluid px-5 d-none">
+        <button class="btn btn-light btn-lg btn-block my-3  "
+            onclick="copiarTabela(document.getElementById('table-yo'))">Copiar tabela</button>
+        <table id="tabela" class="table ">
+            <thead class="">
+                <tr class="table-borderless bg-primary text-white">
+                    <th>Vão</th>
+                    <th>Qnt</th>
+                    <th>Descrição</th>
+                    <th>A x L</th>
+                    <th>Preço</th>
+                    <th>Preço Total</th>
+                    <th>Vidro</th>
+                    <th>Vidro Total</th>
+                    <th>Valor Unit.</th>
+                    <th>PVP Unit.</th>
+                    <th>Valor Total (CUSTO)</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody id="table-yo" class="table-bordered">
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <input type="hidden" id="outputAlu" value="outputAlu" />
+    <input type="hidden" id="outputVid" value="outputVid" />
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+        function bota() {
+            var inputAlu = document.getElementById('inputAluminio');
+            var inputVid = document.getElementById('inputVidro');
+            try {
+                if (getExtension(inputAlu.files[0].name) != 'txt' || getExtension(inputVid.files[0].name) != 'txt') {
+                    $('#myModal').modal();
+                }
+            } catch { }
+            try {
+                if (getExtension(inputAlu.files[0].name) == 'txt' && getExtension(inputVid.files[0].name) == 'txt') {
+                    document.getElementById('bota-shake').removeAttribute('disabled');
+                }
+            } catch { }
+        }
+
+        function input() {
+
+            document.getElementById('nothing-here').classList.add('d-none');
+            var tabela = document.getElementById('tabelaDiv').classList.remove('d-none');
+
+            var inputAlu = document.getElementById('inputAluminio');
+            var inputVid = document.getElementById('inputVidro');
+
+            var fileA = inputAlu.files[0];
+            var fileV = inputVid.files[0];
+
+            var readerA = new FileReader();
+            readerA.onload = function (event) {
+                var arrayA = event.target.result.split('\n');
+
+                var readerV = new FileReader();
+                readerV.onload = function (event) {
+                    var arrayV = event.target.result.split('\n');
+                    pimba(arrayA, arrayV);
+                }
+                readerV.readAsText(fileV);
+            }
+            readerA.readAsText(fileA);
+
+        }
+
+        // são definidas aqui para poder mexer nelas de onde eu quiser
+        let MEGA = [];
+        var vao = [];
+        var quantidade = [];
+        var descricao = [];
+        var alt_lar = [];
+        var preco = [];
+        var preco_total = [];
+        var vao_vidro = [];
+        var vidro = [];
+        var vidro_total = [];
+        var valor_unitario = [];
+        var pvp_unitario = [];
+        var valor_total_custo = [];
+        var total = [];
+        var arrayV2 = [];
+        function pimba(arrayA, arrayV) {
+            // são limpas aqui para dar reset 
+            MEGA = [];
+            vao = [];
+            quantidade = [];
+            descricao = [];
+            alt_lar = [];
+            preco = [];
+            preco_total = [];
+            vao_vidro = [];
+            vidro = [];
+            vidro_total = [];
+            valor_unitario = [];
+            pvp_unitario = [];
+            valor_total_custo = [];
+            total = [];
+            arrayV2 = [];
+
+            var margem = document.getElementById('margem').value;
+
+            // ##### ALUMINIO #####
+
+            // procura info no ficheiro txt (arrayA)
+            for (let i = 0; i < arrayA.length; i++) {
+                // se a linha contiver ' Valor (un) Total'
+                if (arrayA[i].indexOf(' Valor (un) Total') != -1) {
+
+                    let split_vao = arrayA[i].split(' ');
+                    // se a linha ainda contiver 'Valor', entao elimina o ultimo elemento da array split_vao
+                    while (split_vao.indexOf('Valor') >= 0) {
+                        split_vao.pop();
+                    }
+                    let final_vao = split_vao.join(' ');
+
+                    while (/^(\d|,)/g.test(final_vao)){
+                        final_vao = final_vao.substring(1);
+                    }
+
+                    /* nao sei para que era sto mas nao quero eliminar
+                    while (split_vao.match(/^\d|^,/)) {
+                        split_vao = split_vao.substring(0);
+                        console.log("removed one char from VAO");
+                    }
+                    */
+                    //
+                    vao.push(final_vao);
+                }
+                if (arrayA[i].indexOf('Quant.') != -1) {
+                    let split_qua = arrayA[i].split(' ');
+                    quantidade.push(split_qua[1]);
+
+                    preco.push((split_qua[2].concat(split_qua[3])).replace(',', '.').replace('€', ''));
+                    preco_total.push((+preco[preco.length - 1] * +quantidade[quantidade.length - 1]).toFixed(2).toString());
+                }
+                // Isto apanha as descrições (que por acaso estão sempre antes da linha que começa por Cor:)
+                if (arrayA[i].startsWith('Cor:')) {
+                    if (arrayA[i - 1].startsWith(' ')) {
+                        descricao.push(arrayA[i - 1]);
+                    } else {
+                        let split_desc = arrayA[i - 1].split(' ');
+                        while (/^[0-9]/i.test(split_desc[0])) {
+                            split_desc.shift();
+                        }
+                        let final_desc = split_desc.join(' ');
+                        descricao.push(final_desc);
+                    }
+
+                }
+                // aqui apanha-se a largura e altura
+                if (arrayA[i].startsWith('Largura: ')) {
+
+                    //separa a linha em palavras, elimina a primeira ('Largura:') e junta tudo numa string
+                    let split_larg = arrayA[i].split(' ');
+                    split_larg.shift();
+                    let final_larg = split_larg.join('');
+
+                    let split_alt = arrayA[i + 1].split(' ');
+                    split_alt.shift();
+                    let final_alt = split_alt.join('');
+
+                    alt_lar.push(final_alt + " x " + final_larg);
+                    /* isto era o que estava aqui antes, nao apago so para ter um backup
+                    alt_lar.push(arrayA[i + 1].slice(9).replace(",", "") + " x " + arrayA[i].slice(8).replace(",", ""));
+                    */
+                }
+            }
+
+            // ##### VIDRO #####
+
+            // merge duas linhas, caso se veja que são uma só mas indentada
+            for (let i = 0; i < arrayV.length; i++) {
+                for (let j = 0; j < vao.length; j++) {
+                    // se tem o vao
+                    if (arrayV[i].startsWith(vao[j])) {
+                        // se a linha nao tem uma virgula e dois algarismos, entao tem que ser concatenada com a linha seguinte
+                        if (!(/(,\d\d)/g.test(arrayV[i]))) {
+                            arrayV[i] += " " + arrayV[i + 1];
+                        }
+
+                        /*legacy, nao sei se funciona mas o de cima parece melhor
+                        if (arrayV[i].match(/(,\d\d)/g) == null) { 
+                            arrayV[i] = arrayV[i].slice(0, -1);
+                            arrayV.splice(i, 2, arrayV[i] + " " + arrayV[i + 1]);
+                        }
+                        */
+
+                        arrayV2.push(arrayV[i]);
+                    }
+                }
+            }
+            // seleciona o vao do vidro e a quantia de cada vidro
+            for (let l = 0; l < arrayV2.length; l++) {
+                var split_vidro = arrayV2[l].split(' ');
+                vao_vidro.push(split_vidro[0]);
+                vidro_total.push(split_vidro[split_vidro.length - 1].replace('.', '').replace(',', '.'));
+            }
+            console.log("vao_vidro: " + vao_vidro);
+            console.log("vidro_total: " + vidro_total);
+
+            // une linhas com o mesmo vão (somando as quantias do vidro)
+            for (let j = 0; j < 20; j++) {
+                for (let i = 0; i < vao_vidro.length; i++) {
+                    //se o vao é igual ao vao a seguir
+                    if (vao_vidro[i] == vao_vidro[i + 1]) {
+
+
+                        //elimina dois items a começar em i, e adiciona o vao_vidro[i] de novo
+                        vao_vidro.splice(i, 2, vao_vidro[i]);
+                        //elimina dois items a começar em i, e adiciona a soma do vidro[i], mais [i+1]
+                        vidro_total.splice(i, 2, (+vidro_total[i] + +vidro_total[i + 1]).toFixed(2));
+                    }
+                }
+            }
+            console.log("vao: " + vao);
+            console.log("vao_vidro: " + vao_vidro);
+            console.log("vidro_total: " + vidro_total);
+            // divide o vidro total pela quantidade, dando o preço do vidro por vão
+            for (var i = 0; i < vao.length; i++) {
+                for (var j = 0; j < vao_vidro.length; j++) {
+
+                    if (vao_vidro[j].indexOf(vao[i]) >= 0) {
+                        vidro[j] = (vidro_total[j] / quantidade[i]).toFixed(2);
+                    }
+                }
+            }
+
+            // calcula o valor unitario, o valor total de custo, o pvp unitario e o TOTAL
+            for (let i = 0; i < vao.length; i++) {
+                if (vao[i] == vao_vidro[i]) {
+                    valor_unitario.push((+preco[i] + +vidro[i]).toFixed(2));
+                    valor_total_custo.push((+preco_total[i] + +vidro_total[i]).toFixed(2));
+                } else {
+                    valor_unitario.push(preco[i]);
+                    valor_total_custo.push(preco_total[i]);
+                }
+                pvp_unitario.push((+valor_unitario[i] + (valor_unitario[i] * (margem / 100))).toFixed(2));
+                total.push((+valor_total_custo[i] + (valor_total_custo[i] * (margem / 100))).toFixed(2));
+            }
+            // insere a info certinha numa array bidimensional (aka tabela)
+            // dois for para conseguir pôr a informação certa, mesmo quando vao e vao_vidro estão desalinhados
+            for (var i = 0; i < vao.length; i++) {
+                for (var j = 0; j < vao_vidro.length; j++) {
+
+                    if (vao_vidro[j].indexOf(vao[i]) >= 0) {
+                        console.log("vao_vidro[j].indexOf(vao[i]) = ", vao_vidro[j].indexOf(vao[i]));
+                        MEGA.push([vao[i], quantidade[i], descricao[i], alt_lar[i], preco[i].replace('.', ',') + "€", preco_total[i].replace('.', ',') + "€", vidro[j].replace('.', ',') + "€", vidro_total[j].replace('.', ',') + "€", valor_unitario[i].replace('.', ',') + "€", pvp_unitario[i].replace('.', ',') + "€", valor_total_custo[i].replace('.', ',') + "€", total[i].replace('.', ',') + "€"]);
+                    }
+
+
+                    /*
+                    if (vao[i].toString() == vao_vidro[j].toString()) {
+                        console.log(vao[i] +  " = " + vao_vidro[j]);
+                    }*/
+                }
+            }
+
+            // Se por acaso os vaos do alu e vid nao forem iguais, escreve isto
+            if (MEGA == "") {
+                for (let i = 0; i < vao.length; i++) {
+                    MEGA.push([vao[i], quantidade[i], descricao[i], alt_lar[i], preco[i].replace('.', ',') + "€", preco_total[i].replace('.', ',') + "€", '-', '-', valor_unitario[i].replace('.', ',') + "€", pvp_unitario[i].replace('.', ',') + "€", valor_total_custo[i].replace('.', ',') + "€", total[i].replace('.', ',') + "€"]);
+
+                }
+            }
+
+            /*
+                for (let i = 0; i < vao.length; i++) {
+                    //if (vao[i] == vao_vidro[h]) {
+                        MEGA.push([vao[i], quantidade[i], descricao[i], alt_lar[i], preco[i].replace('.', ',') + "€", preco_total[i].replace('.', ',') + "€", vidro[i].replace('.', ',') + "€", vidro_total[i].replace('.', ',') + "€", valor_unitario[i].replace('.', ',') + "€", pvp_unitario[i].replace('.', ',') + "€", valor_total_custo[i].replace('.', ',') + "€", total[i].replace('.', ',') + "€"]);
+                    //} 
+                    /*else {
+                        MEGA.push([vao[i], quantidade[i], descricao[i], alt_lar[i], preco[i].replace('.', ',') + "€", preco_total[i].replace('.', ',') + "€", '      '                        , '            '                        , valor_unitario[i].replace('.', ',') + "€", pvp_unitario[i].replace('.', ',') + "€", valor_total_custo[i].replace('.', ',') + "€", total[i].replace('.', ',') + "€"]);
+                    }*/
+            // }
+            // alimenta a tabela com os dados da array MEGA
+            addRows();
+        }
+
+
+
+
+        function addRows() {
+            document.getElementById('table-yo').innerHTML = '';
+
+            for (let i = 0; i < MEGA.length; i++) {
+                let row = document.getElementById('table-yo').insertRow(-1);
+                // Insert new cells (<td> elements) of the "new" <tr> element:
+                let cell_vao = row.insertCell(0);
+                let cell_qua = row.insertCell(1);
+                let cell_dsc = row.insertCell(2)
+                let cell_axl = row.insertCell(3);
+                let cell_pre = row.insertCell(4);
+                let cell_ptt = row.insertCell(5);
+                let cell_vid = row.insertCell(6);
+                let cell_vtt = row.insertCell(7);
+                let cell_vun = row.insertCell(8);
+                let cell_pun = row.insertCell(9);
+                let cell_vac = row.insertCell(10);
+                let cell_TOT = row.insertCell(11);
+
+                // add content to the cells
+                cell_vao.innerHTML = MEGA[i][0];
+                cell_qua.innerHTML = MEGA[i][1];
+                cell_dsc.innerHTML = MEGA[i][2];
+                cell_axl.innerHTML = MEGA[i][3];
+                cell_pre.innerHTML = MEGA[i][4];
+                cell_ptt.innerHTML = MEGA[i][5];
+                cell_vid.innerHTML = MEGA[i][6];
+                cell_vtt.innerHTML = MEGA[i][7];
+                cell_vun.innerHTML = MEGA[i][8];
+                cell_pun.innerHTML = MEGA[i][9];
+                cell_vac.innerHTML = MEGA[i][10];
+                cell_TOT.innerHTML = MEGA[i][11];
+            }
+
+            //soma o total, por exemplo
+            var total_sum = 0;
+            var vidro_total_sum = 0;
+            for (let i = 0; i < total.length; i++) {
+                total_sum += +total[i];
+            }
+            for (let i = 0; i < vidro_total.length; i++) {
+                vidro_total_sum += +vidro_total[i];
+            }
+            let row_sum = document.getElementById('table-yo').insertRow(-1);
+            row_sum.classList.add('table-primary');
+            let cell_fake_0 = row_sum.insertCell(0);
+            let cell_fake_1 = row_sum.insertCell(1);
+            let cell_fake_2 = row_sum.insertCell(2);
+            let cell_fake_3 = row_sum.insertCell(3);
+            let cell_fake_4 = row_sum.insertCell(4);
+            let cell_fake_5 = row_sum.insertCell(5);
+            let cell_fake_6 = row_sum.insertCell(6);
+            let cell_vidro_total_sum = row_sum.insertCell(7);
+            let cell_fake_8 = row_sum.insertCell(8);
+            let cell_fake_9 = row_sum.insertCell(9);
+            let cell_fake_10 = row_sum.insertCell(10);
+            let cell_total_sum = row_sum.insertCell(11);
+
+            cell_vidro_total_sum.innerHTML = vidro_total_sum.toFixed(2);
+            cell_total_sum.innerHTML = total_sum.toFixed(2);
+
+            document.getElementById('tabela').scrollIntoView();
+
+        }
+
+        function getExtension(filename) {
+            var parts = filename.split('.');
+            return parts[parts.length - 1];
+        }
+
+        function copiarTabela(el) {
+            var body = document.body, range, sel;
+            if (document.createRange && window.getSelection) {
+                range = document.createRange();
+                sel = window.getSelection();
+                sel.removeAllRanges();
+                try {
+                    range.selectNodeContents(el);
+                    sel.addRange(range);
+                } catch (e) {
+                    range.selectNode(el);
+                    sel.addRange(range);
+                }
+                document.execCommand("copy");
+            } else if (body.createTextRange) {
+                range = body.createTextRange();
+                range.moveToElementText(el);
+                range.select();
+                range.execCommand("copy");
+            }
+
+            console.log('Tabela copiada');
+        }
+
+
+
+    </script>
+</body>
+
+</html>
